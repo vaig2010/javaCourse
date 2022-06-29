@@ -1,7 +1,6 @@
 package repository.impl;
 
 import users.Doctor;
-import users.Patient;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,9 +20,11 @@ public class DoctorRepositoryImpl {
         return SINGLETON;
     }
 
+
     public Set<Doctor> findAll() {
         return DOCTORS;
     }
+
 
     public void save(Doctor doctor) {
         DOCTORS.add(doctor);

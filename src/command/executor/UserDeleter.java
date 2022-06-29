@@ -1,6 +1,5 @@
 package command.executor;
 
-import repository.impl.PatientRepositoryImpl;
 import users.Doctor;
 import users.Patient;
 import command.CommandType;

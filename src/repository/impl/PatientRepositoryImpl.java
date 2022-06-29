@@ -1,5 +1,6 @@
 package repository.impl;
 
+import users.AbstractUser;
 import users.Patient;
 
 import java.util.HashSet;
@@ -16,13 +17,9 @@ public class PatientRepositoryImpl {
 
     private PatientRepositoryImpl() {}
 
-    public static PatientRepositoryImpl getSingleton() {
-        return SINGLETON;
-    }
+    public static PatientRepositoryImpl getSingleton() {return SINGLETON;}
 
-    public Set<Patient> findAll() {
-        return PATIENTS;
-    }
+    public Set<Patient> findAll() {return PATIENTS;}
 
     public void save(Patient patient) {
         PATIENTS.add(patient);

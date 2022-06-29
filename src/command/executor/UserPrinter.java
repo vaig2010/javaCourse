@@ -1,11 +1,8 @@
 package command.executor;
 
-import repository.impl.PatientRepositoryImpl;
 import users.Doctor;
 import users.Patient;
 import command.CommandType;
-
-import java.util.Optional;
 
 public class UserPrinter extends AbstractCommandExecutor {
 
@@ -38,7 +35,22 @@ public class UserPrinter extends AbstractCommandExecutor {
             return 1;
         }
         else return -1;
+    }
 
-
+    private void printAbstractUser(String type)
+    {
+        if (type.equals("doctor"))
+        {
+            for (Doctor doctor : doctorRepository.findAll()) {
+                System.out.printf("Id: \"%s\". Name: \"%s\"%n", doctor.getId(), doctor.getName());
+            }
+        }
+        else if (type.equals("patient"))
+        {
+            for (Patient patient : patientRepository.findAll()) {
+                System.out.printf("Id: \"%s\". Name: \"%s\". rDate: \"%s\". %n",
+                        patient.getId(), patient.getName(), patient.getRegistrationDate());
+            }
+        }
     }
 }

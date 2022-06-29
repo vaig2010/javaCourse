@@ -1,9 +1,8 @@
 package command.executor;
 
-import users.Doctor;
 import users.Patient;
+import users.Doctor;
 import command.CommandType;
-import repository.impl.PatientRepositoryImpl;
 
 public class UserCreator extends AbstractCommandExecutor {
 

@@ -1,12 +1,11 @@
 package command.executor;
 
 import repository.impl.DoctorRepositoryImpl;
-import users.Doctor;
-import java.util.Optional;
 import repository.impl.PatientRepositoryImpl;
+import users.Doctor;
 import users.Patient;
 
-import javax.print.Doc;
+import java.util.Optional;
 
 public abstract class AbstractCommandExecutor implements CommandExecutor {
 
@@ -19,8 +18,6 @@ public abstract class AbstractCommandExecutor implements CommandExecutor {
                 return Optional.of(patient);
             }
         }
-
-
         return Optional.empty();
     }
     protected Optional<Doctor> findDoctor(String noteName) {

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Added Authentication">
-      <change afterPath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/users/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/users/Patient.java" afterDir="false" />
+    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Create and delete users">
+      <change afterPath="$PROJECT_DIR$/src/users/AbstractUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/executor/UserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Patient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +44,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "F:/JavaProjects/VetClinic",
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
@@ -92,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656507406420</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create and delete users">
+      <created>1656528830852</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656528830852</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Authentication" />
+    <MESSAGE value="Create and delete users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create and delete users" />
   </component>
 </project>
