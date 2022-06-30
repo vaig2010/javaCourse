@@ -1,5 +1,6 @@
 package command.executor;
 
+import database.MySqlDatabase;
 import repository.impl.DoctorRepositoryImpl;
 import repository.impl.PatientRepositoryImpl;
 import users.Doctor;
@@ -11,6 +12,8 @@ public abstract class AbstractCommandExecutor implements CommandExecutor {
 
     protected final PatientRepositoryImpl patientRepository = PatientRepositoryImpl.getSingleton();
     protected final DoctorRepositoryImpl doctorRepository = DoctorRepositoryImpl.getSingleton();
+
+    protected final MySqlDatabase mySQL = MySqlDatabase.getSingleton();
 
     protected Optional<Patient> findPatient(String noteName) {
         for (Patient patient : patientRepository.findAll()) {

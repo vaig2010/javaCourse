@@ -8,7 +8,6 @@ public enum CommandType {
     DELETE_USER,
     PRINT_USERS,
     RENAME_USER,
-    USER_TYPE,
 
     EXIT,
 

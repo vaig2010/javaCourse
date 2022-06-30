@@ -1,9 +1,7 @@
 package command;
-import command.executor.UserCreator;
-import command.executor.UserDeleter;
-import command.executor.CommandExecutor;
-import command.executor.UserPrinter;
+import command.executor.*;
 
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -20,7 +18,8 @@ public class CommandReader {
     private static final Map<CommandType, CommandExecutor> COMMAND_EXECUTORS_GROUPED_BY_COMMAND = Map.of(
             CommandType.CREATE_USER, new UserCreator(),
             CommandType.DELETE_USER, new UserDeleter(),
-            CommandType.PRINT_USERS, new UserPrinter()
+            CommandType.PRINT_USERS, new UserPrinter(),
+            CommandType.RENAME_USER, new UserRenamer()
     );
 
     /** Stop reading on command "exit". */
@@ -41,7 +40,7 @@ public class CommandReader {
      * - "delete note note-name";
      * - "notes" - to view all notes.
      */
-    private static int readCommand(Scanner s) {
+    private static int readCommand(Scanner s)  {
         var commandString = s.nextLine();
 
         CommandType commandType = getCommandType(commandString); // достаем из строки команду.
@@ -70,6 +69,10 @@ public class CommandReader {
 
         if (commandString.contains("print")) {
             return CommandType.PRINT_USERS;
+        }
+
+        if (commandString.contains("rename")) {
+            return CommandType.RENAME_USER;
         }
 
         if (commandString.contains("exit")) {

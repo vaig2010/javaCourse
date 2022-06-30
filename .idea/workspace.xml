@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Create and delete users">
-      <change afterPath="$PROJECT_DIR$/src/users/AbstractUser.java" afterDir="false" />
+    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Added MySqlDatabase and UserRenamer (Все данные теперь в БД)">
+      <change afterPath="$PROJECT_DIR$/src/command/executor/UserRenamer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/MySqlDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VetClinic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VetClinic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/CommandReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/CommandType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/executor/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/CommandExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/executor/UserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/AbstractUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/AbstractUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/Patient.java" afterDir="false" />
     </list>
@@ -44,9 +49,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "F:/JavaProjects/VetClinic",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
+    "last_opened_file_path": "F:/JavaProjects/VetClinic/lib/mysql-connector-java-8.0.29.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
@@ -119,6 +124,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Authentication" />
     <MESSAGE value="Create and delete users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create and delete users" />
+    <MESSAGE value="Added MySqlDatabase and UserRenamer (Все данные теперь в БД)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added MySqlDatabase and UserRenamer (Все данные теперь в БД)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/command/executor/UserCreator.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/command/executor/UserRenamer.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
