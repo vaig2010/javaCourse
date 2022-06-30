@@ -13,7 +13,7 @@ public class UserPrinter extends AbstractCommandExecutor {
 
     @Override
     public int execute(String command)  {
-        return printSqlPatients(command);
+        return printSqlUsers(command);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class UserPrinter extends AbstractCommandExecutor {
         else return -1;
     }
 
-    private int printSqlPatients(String command)
+    private int printSqlUsers(String command)
     {
         var wordsArray = command.split(" ");
         var userType = wordsArray[1];

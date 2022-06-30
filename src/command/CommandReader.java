@@ -19,7 +19,10 @@ public class CommandReader {
             CommandType.CREATE_USER, new UserCreator(),
             CommandType.DELETE_USER, new UserDeleter(),
             CommandType.PRINT_USERS, new UserPrinter(),
-            CommandType.RENAME_USER, new UserRenamer()
+            CommandType.RENAME_USER, new UserRenamer(),
+            CommandType.CREATE_RECORD, new RecordCreator(),
+            CommandType.CHANGE_RECORD, new RecordChanger(),
+            CommandType.PRINT_RECORDS, new RecordPrinter()
     );
 
     /** Stop reading on command "exit". */
@@ -59,21 +62,31 @@ public class CommandReader {
     }
 
     private static CommandType getCommandType(String commandString) {
-        if (commandString.contains("create")) {
+        if (commandString.contains("create record")) {
+            return CommandType.CREATE_RECORD;
+        }
+        else if (commandString.split(" ")[0].equals("create")) {
             return CommandType.CREATE_USER;
+        }
+
+        if (commandString.contains("print records")) {
+            return CommandType.PRINT_RECORDS;
+        }
+        else if (commandString.split(" ")[0].equals("print")) {
+            return CommandType.PRINT_USERS;
         }
 
         if (commandString.contains("delete")) {
             return CommandType.DELETE_USER;
         }
-
-        if (commandString.contains("print")) {
-            return CommandType.PRINT_USERS;
-        }
-
         if (commandString.contains("rename")) {
             return CommandType.RENAME_USER;
         }
+
+        if (commandString.contains("change status")) {
+            return CommandType.CHANGE_RECORD;
+        }
+
 
         if (commandString.contains("exit")) {
             return CommandType.EXIT;

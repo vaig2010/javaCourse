@@ -32,7 +32,10 @@ public class UserRenamer extends AbstractCommandExecutor{
                         userName2, userName1));
                 System.out.println("patient renamed");
             }
-            catch (Exception e) { return -1; }
+            catch (Exception e) {
+                System.out.println("patient rename failed");
+                return -1;
+            }
         }
         if (userType.equals("doctor"))
         {
@@ -43,7 +46,10 @@ public class UserRenamer extends AbstractCommandExecutor{
                         userName2, userName1));
                 System.out.println("doctor renamed");
             }
-            catch (Exception e) { return -1; }
+            catch (Exception e) {
+                System.out.println("doctor rename failed");
+                return -1;
+            }
         }
         return 1;
     }

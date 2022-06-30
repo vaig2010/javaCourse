@@ -19,39 +19,6 @@ public class UserDeleter extends AbstractCommandExecutor {
         return CommandType.DELETE_USER;
     }
 
-    private int deleteNote(String command) {
-        var wordsArray = command.split(" ");
-        var userType = wordsArray[1];
-        var noteNameToRemove = wordsArray[2];
-        if (userType.equals("doctor"))
-        {
-            Optional<Doctor> noteToRemove = findDoctor(noteNameToRemove);
-            if (noteToRemove.isPresent()) {
-                doctorRepository.remove(noteToRemove.get());
-                System.out.println("User deleted");
-            } else {
-                System.out.println("User not found");
-            }
-
-            return 1;
-        }
-        else if (userType.equals("patient"))
-        {
-            Optional<Patient> noteToRemove = findPatient(noteNameToRemove);
-            if (noteToRemove.isPresent()) {
-                patientRepository.remove(noteToRemove.get());
-
-                System.out.println("User deleted");
-            } else {
-                System.out.println("User not found");
-            }
-
-            return 1;
-        }
-        else return -1;
-
-    }
-
     private int deleteSqlUser(String command)
     {
         var wordsArray = command.split(" ");
@@ -67,7 +34,10 @@ public class UserDeleter extends AbstractCommandExecutor {
                         userName));
                 System.out.println("patient deleted");
             }
-            catch (Exception e) { return -1; }
+            catch (Exception e) {
+                System.out.println("patient delete failed");
+                return -1;
+            }
         }
         if (userType.equals("doctor"))
         {
@@ -78,7 +48,10 @@ public class UserDeleter extends AbstractCommandExecutor {
                         userName));
                 System.out.println("doctor deleted");
             }
-            catch (Exception e) { return -1; }
+            catch (Exception e) {
+                System.out.println("doctor delete failed");
+                return -1;
+            }
         }
         return 1;
     }
