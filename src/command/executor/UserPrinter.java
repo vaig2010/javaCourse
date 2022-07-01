@@ -1,54 +1,25 @@
 package command.executor;
 
-import users.Doctor;
-import users.Patient;
 import command.CommandType;
-
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class UserPrinter extends AbstractCommandExecutor {
 
     @Override
-    public int execute(String command)  {
-        return printSqlUsers(command);
-    }
+    public int execute(String command)  { return printSqlUsers(command); }
 
     @Override
     public CommandType getCommandType() {
         return CommandType.PRINT_USERS;
     }
 
-    private int printUsers(String command) {
-        var wordsArray = command.split(" ");
-        var userType = wordsArray[1];
-        if (userType.equals("doctor"))
-        {
-            for (Doctor doctor : doctorRepository.findAll()) {
-                System.out.printf("Id: \"%s\". Name: \"%s\"%n", doctor.getId(), doctor.getName());
-            }
-            return 1;
-        }
-        else if (userType.equals("patient"))
-        {
-            for (Patient patient : patientRepository.findAll()) {
-                System.out.printf("Id: \"%s\". Name: \"%s\". rDate: \"%s\". %n",
-                        patient.getId(), patient.getName(), patient.getRegistrationDate());
-            }
-            return 1;
-        }
-        else return -1;
-    }
-
     private int printSqlUsers(String command)
     {
         var wordsArray = command.split(" ");
         var userType = wordsArray[1];
-        if (userType.equals("patients"))
+        try
         {
-            try
+            if (userType.equals("patients"))
             {
                 ResultSet resultSet = mySQL.query("Select * from Patient");
                 while (resultSet.next())
@@ -60,14 +31,7 @@ public class UserPrinter extends AbstractCommandExecutor {
                 }
                 resultSet.close();
             }
-            catch (Exception e)
-            {
-                return -1;
-            }
-        }
-        if (userType.equals("doctors"))
-        {
-            try
+            if (userType.equals("doctors"))
             {
                 ResultSet resultSet = mySQL.query("Select * from Doctor");
                 while (resultSet.next())
@@ -78,12 +42,8 @@ public class UserPrinter extends AbstractCommandExecutor {
                 }
                 resultSet.close();
             }
-            catch (Exception e)
-            {
-                return -1;
-            }
+            return 1;
         }
-        return 1;
-
+        catch (Exception e) { return -1; }
     }
 }

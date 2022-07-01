@@ -1,20 +1,10 @@
 package command;
 import command.executor.*;
 
-import java.sql.SQLException;
 import java.util.Map;
 import java.util.Scanner;
 
 public class CommandReader {
-
-    // Map.of - метод, позволяющий инициализировать мапу сразу с данными в ней.
-    // Ключем в этой мапе выступает CommandType, то есть какая-то команда (создание заметки, ее удаление, и тп).
-    // Значением выступает обработчик этой команды.
-
-    // Таким образом, можем за О(1) найти обработчик по команде. Не то что бы это сильно быстрее, чем просто перебрать все обработчики за О(n)
-    // при таком количестве обработчиков :)
-
-    // Рекомендую почитать подробнее про внутреннюю работу HashMap, TreeMap и тп.
     private static final Map<CommandType, CommandExecutor> COMMAND_EXECUTORS_GROUPED_BY_COMMAND = Map.of(
             CommandType.CREATE_USER, new UserCreator(),
             CommandType.DELETE_USER, new UserDeleter(),
@@ -39,9 +29,18 @@ public class CommandReader {
 
     /**
      * Available commands:
-     * - "create note note-name note text", note-name - only 1 word, note text - 1 or more words;
-     * - "delete note note-name";
-     * - "notes" - to view all notes.
+     * - "create doctor doctor-name";
+     * - "create patient patient-name registration-date", registration-date format - 2022-01-01 ;
+     * - "create record patient-id doctor-id status record-date record-time", status - 1 word! \
+     *    example ( create record 1 4 In_progress 2022-01-01 15:00 );
+     * - "print doctors", view all doctors;
+     * - "print patients";
+     * - "print records patient-id";
+     * - "print records all";
+     * - "delete patient patient-name", same for doctors;
+     * - "rename patient old-patient-name new-patient-name", same for doctors;
+     * - "change status record-id new-status", example ( change status 1 Done );
+     * - "exit";
      */
     private static int readCommand(Scanner s)  {
         var commandString = s.nextLine();
@@ -86,7 +85,6 @@ public class CommandReader {
         if (commandString.contains("change status")) {
             return CommandType.CHANGE_RECORD;
         }
-
 
         if (commandString.contains("exit")) {
             return CommandType.EXIT;

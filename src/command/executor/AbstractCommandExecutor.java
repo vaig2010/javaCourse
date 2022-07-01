@@ -15,6 +15,7 @@ public abstract class AbstractCommandExecutor implements CommandExecutor {
 
     protected final MySqlDatabase mySQL = MySqlDatabase.getSingleton();
 
+    // UNUSED
     protected Optional<Patient> findPatient(String noteName) {
         for (Patient patient : patientRepository.findAll()) {
             if (patient.getName().equals(noteName)) {

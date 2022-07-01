@@ -5,9 +5,7 @@ import command.CommandType;
 public class RecordChanger extends AbstractCommandExecutor{
 
     @Override
-    public int execute(String command) {
-        return createSqlRecords(command);
-    }
+    public int execute(String command) { return createSqlRecords(command); }
 
     @Override
     public CommandType getCommandType() {
@@ -30,8 +28,6 @@ public class RecordChanger extends AbstractCommandExecutor{
             System.out.println("record status change failed");
             return -1;
         }
-
         return 1;
-
     }
 }

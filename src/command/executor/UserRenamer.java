@@ -2,7 +2,6 @@ package command.executor;
 
 import command.CommandType;
 
-import java.sql.SQLException;
 
 public class UserRenamer extends AbstractCommandExecutor{
 
@@ -22,35 +21,28 @@ public class UserRenamer extends AbstractCommandExecutor{
         var userType = wordsArray[1];
         var userName1 = wordsArray[2];
         var userName2 = wordsArray[3];
-
-        if (userType.equals("patient"))
+        try
         {
-            try
+            if (userType.equals("patient"))
             {
                 mySQL.execUpdate(String.format(
                         "UPDATE Patient SET Name = '%s' WHERE Name = '%s';",
                         userName2, userName1));
                 System.out.println("patient renamed");
             }
-            catch (Exception e) {
-                System.out.println("patient rename failed");
-                return -1;
-            }
-        }
-        if (userType.equals("doctor"))
-        {
-            try
+            if (userType.equals("doctor"))
             {
                 mySQL.execUpdate(String.format(
                         "UPDATE Doctor SET Name = '%s' WHERE Name = '%s';",
                         userName2, userName1));
                 System.out.println("doctor renamed");
             }
-            catch (Exception e) {
-                System.out.println("doctor rename failed");
-                return -1;
-            }
+            return 1;
         }
-        return 1;
+        catch (Exception e)
+        {
+            System.out.println("user renaming failed");
+            return -1;
+        }
     }
 }

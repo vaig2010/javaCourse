@@ -1,17 +1,11 @@
 package command.executor;
 
-import users.Patient;
-import users.Doctor;
 import command.CommandType;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class UserCreator extends AbstractCommandExecutor {
     @Override
-    public int execute(String command) {
-        return createSqlUsers(command);
-    }
+    public int execute(String command) { return createSqlUsers(command); }
     @Override
     public CommandType getCommandType() {
         return CommandType.CREATE_USER;
@@ -22,39 +16,33 @@ public class UserCreator extends AbstractCommandExecutor {
         var wordsArray = command.split(" ");
         var userType = wordsArray[1];
         var userName = wordsArray[2];
-
-        if (userType.equals("patient"))
+        try
         {
-            var regDate = wordsArray[3];
-            try
+            // Все подобные записи аналогичны.
+            // Если команда (create patient). Создание пациента
+            if (userType.equals("patient"))
             {
-                int answ = mySQL.execUpdate(String.format(
+                var regDate = wordsArray[3];
+                mySQL.execUpdate(String.format(
                         "INSERT INTO Patient (Name, RegistrationDate) VALUES ('%s', '%s');",
                         userName,regDate));
                 System.out.println("patient created");
             }
-            catch (Exception e) {
-                System.out.println("patient create failed");
-                return -1;
-            }
-        }
-        if (userType.equals("doctor"))
-        {
-            try
+            // Если команда (create doctor). Создание доктора
+            if (userType.equals("doctor"))
             {
-                int answ = mySQL.execUpdate(String.format(
+                mySQL.execUpdate(String.format(
                         "INSERT INTO Doctor (Name) VALUES ('%s');",
                         userName));
                 System.out.println("doctor created");
             }
-            catch (Exception e) {
-                System.out.println("doctor create failed");
-                return -1;
-            }
+            return 1;
         }
-
-        return 1;
-
+        catch (Exception e)
+        {
+            System.out.println("user creation failed");
+            return -1;
+        }
     }
 }
 

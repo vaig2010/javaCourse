@@ -2,7 +2,6 @@ package command.executor;
 
 import command.CommandType;
 
-import java.sql.ResultSet;
 
 public class RecordCreator extends AbstractCommandExecutor{
     @Override
@@ -36,8 +35,6 @@ public class RecordCreator extends AbstractCommandExecutor{
             System.out.println("record create failed");
             return -1;
         }
-
         return 1;
-
     }
 }
