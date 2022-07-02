@@ -23,7 +23,7 @@ public class MySqlDatabase {
 
     private MySqlDatabase() throws SQLException {}
 
-    public static MySqlDatabase getSingleton() {return SINGLETON;}
+    public static MySqlDatabase getSingleton() { return SINGLETON; }
 
     public Connection getConnect(String url, String username, String password)
     {
