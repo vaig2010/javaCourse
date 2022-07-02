@@ -10,6 +10,8 @@ public enum CommandType {
     CHANGE_RECORD,
     PRINT_RECORDS,
 
+    CREATE_DATABASE,
+
     EXIT,
 
     UNDEFINED

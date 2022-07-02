@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Added Records">
+    <list default="true" id="80d73963-059b-422b-8b93-596c69abc3df" name="Changes" comment="Formatting (Удаление неиспользуемых строк кода, добавление комментариев)">
+      <change afterPath="$PROJECT_DIR$/src/command/executor/DBCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/CommandReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/CommandReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/AbstractCommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/CommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/RecordChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/RecordChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/RecordCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/RecordCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/RecordPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/RecordPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/UserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserDeleter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/executor/UserRenamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/executor/UserRenamer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/MySqlDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/MySqlDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/DoctorRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/impl/PatientRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656615032520</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Formatting (Удаление неиспользуемых строк кода, добавление комментариев)">
+      <created>1656719690949</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656719690949</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +138,18 @@
     <MESSAGE value="Create and delete users" />
     <MESSAGE value="Added MySqlDatabase and UserRenamer (Все данные теперь в БД)" />
     <MESSAGE value="Added Records" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Records" />
+    <MESSAGE value="Formatting (Удаление неиспользуемых строк кода, добавление комментариев)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting (Удаление неиспользуемых строк кода, добавление комментариев)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/command/CommandReader.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

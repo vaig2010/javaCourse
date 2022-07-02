@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class MySqlDatabase {
     String username = "igor";
     String password = "12345";
-    String url = "jdbc:mysql://localhost:3306/Clinic";
+    String url = "jdbc:mysql://localhost:3306/";
     Connection connection;
     private static final MySqlDatabase SINGLETON;   // Используем паттерн singleton,
 

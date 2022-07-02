@@ -12,7 +12,8 @@ public class CommandReader {
             CommandType.RENAME_USER, new UserRenamer(),
             CommandType.CREATE_RECORD, new RecordCreator(),
             CommandType.CHANGE_RECORD, new RecordChanger(),
-            CommandType.PRINT_RECORDS, new RecordPrinter()
+            CommandType.PRINT_RECORDS, new RecordPrinter(),
+            CommandType.CREATE_DATABASE, new DBCreator()
     );
 
     /** Stop reading on command "exit". */
@@ -29,6 +30,7 @@ public class CommandReader {
 
     /**
      * Available commands:
+     * - "create database";
      * - "create doctor doctor-name";
      * - "create patient patient-name registration-date", registration-date format - 2022-01-01 ;
      * - "create record patient-id doctor-id status record-date record-time", status - 1 word! \
@@ -63,6 +65,10 @@ public class CommandReader {
     private static CommandType getCommandType(String commandString) {
         if (commandString.contains("create record")) {
             return CommandType.CREATE_RECORD;
+        }
+        else if (commandString.contains("create database"))
+        {
+            return CommandType.CREATE_DATABASE;
         }
         else if (commandString.split(" ")[0].equals("create")) {
             return CommandType.CREATE_USER;

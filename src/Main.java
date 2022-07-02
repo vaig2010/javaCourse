@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         // login: admin
         // password: admin
-        Authentication authentication = new Authentication();
-        authentication.authenticate();
+//        Authentication authentication = new Authentication();
+//        authentication.authenticate();
         MySqlDatabase mySQL = MySqlDatabase.getSingleton();
         // OR
         // var conn = mySQL.getConnect("jdbc:mysql://localhost:3306/DBNAME", "user", "password");
